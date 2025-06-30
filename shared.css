@@ -1,0 +1,178 @@
+/* Shared CSS Variables and Base Styles */
+:root {
+    --primary-color: #f7931a;
+    --secondary-color: #4d4d4d;
+    --background-color: #ffffff;
+    --text-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Shared Components */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bitcoin-icon {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Email-specific styles */
+.email-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.email-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.email-header .logo {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.email-header .bitcoin-icon {
+    color: white;
+}
+
+.email-content {
+    padding: 40px 30px;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+.price-section {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 25px 0;
+    border-left: 4px solid var(--primary-color);
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.negotiable-note {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-top: 15px;
+}
+
+.domains-section {
+    margin: 30px 0;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.domain-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.domain-item {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.domain-name {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.domain-price {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.discount-offer {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.discount-title {
+    color: #856404;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.closing {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.signature {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.contact-info {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .email-container {
+        margin: 10px;
+    }
+    
+    .email-content {
+        padding: 30px 20px;
+    }
+    
+    .domain-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+} 
