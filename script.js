@@ -30,16 +30,46 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Show success message
                     formMessages.innerHTML = '<div class="success-message">Thank you! Your message has been sent successfully. I\'ll get back to you soon.</div>';
                     
+                    // Track successful form submission in Google Analytics 4
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submission', {
+                            'form_name': 'contact_form',
+                            'form_status': 'success',
+                            'event_category': 'engagement',
+                            'event_label': 'contact_form_success'
+                        });
+                    }
+                    
                     // Reset form
                     this.reset();
                 } else {
                     // Show error message
                     formMessages.innerHTML = '<div class="error-message">Sorry, there was an error sending your message. Please try again or contact me directly via email.</div>';
+                    
+                    // Track failed form submission in Google Analytics 4
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submission', {
+                            'form_name': 'contact_form',
+                            'form_status': 'error',
+                            'event_category': 'engagement',
+                            'event_label': 'contact_form_error'
+                        });
+                    }
                 }
             })
             .catch(error => {
                 // Show error message
                 formMessages.innerHTML = '<div class="error-message">Sorry, there was an error sending your message. Please try again or contact me directly via email.</div>';
+                
+                // Track network error in Google Analytics 4
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submission', {
+                        'form_name': 'contact_form',
+                        'form_status': 'network_error',
+                        'event_category': 'engagement',
+                        'event_label': 'contact_form_network_error'
+                    });
+                }
             })
             .finally(() => {
                 // Re-enable submit button
